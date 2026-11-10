@@ -2,6 +2,8 @@
 {
     partial class CheckoutForm
     {
+
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -28,20 +30,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            CheckoutList = new ListBox();
+            lstCart = new ListBox();
             btnBack = new Button();
-            btnAddItem = new Button();
             btnCheckout = new Button();
             btnRemoveItem = new Button();
+            lblTotal = new Label();
             SuspendLayout();
             // 
-            // CheckoutList
+            // lstCart
             // 
-            CheckoutList.FormattingEnabled = true;
-            CheckoutList.Location = new Point(9, 34);
-            CheckoutList.Name = "CheckoutList";
-            CheckoutList.Size = new Size(496, 349);
-            CheckoutList.TabIndex = 0;
+            lstCart.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lstCart.FormattingEnabled = true;
+            lstCart.Location = new Point(9, 34);
+            lstCart.Name = "lstCart";
+            lstCart.Size = new Size(496, 340);
+            lstCart.TabIndex = 0;
             // 
             // btnBack
             // 
@@ -51,15 +54,7 @@
             btnBack.TabIndex = 1;
             btnBack.Text = "Back to Order";
             btnBack.UseVisualStyleBackColor = true;
-            // 
-            // btnAddItem
-            // 
-            btnAddItem.Location = new Point(355, 401);
-            btnAddItem.Name = "btnAddItem";
-            btnAddItem.Size = new Size(150, 32);
-            btnAddItem.TabIndex = 2;
-            btnAddItem.Text = "Add Item";
-            btnAddItem.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // btnCheckout
             // 
@@ -72,33 +67,44 @@
             // 
             // btnRemoveItem
             // 
-            btnRemoveItem.Location = new Point(355, 435);
+            btnRemoveItem.Location = new Point(355, 401);
             btnRemoveItem.Name = "btnRemoveItem";
-            btnRemoveItem.Size = new Size(150, 32);
+            btnRemoveItem.Size = new Size(150, 66);
             btnRemoveItem.TabIndex = 4;
             btnRemoveItem.Text = "Remove Item";
             btnRemoveItem.UseVisualStyleBackColor = true;
+            // 
+            // lblTotal
+            // 
+            lblTotal.AutoSize = true;
+            lblTotal.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTotal.Location = new Point(12, 349);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(23, 25);
+            lblTotal.TabIndex = 5;
+            lblTotal.Text = "₱";
             // 
             // CheckoutForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(525, 504);
+            Controls.Add(lblTotal);
             Controls.Add(btnRemoveItem);
             Controls.Add(btnCheckout);
-            Controls.Add(btnAddItem);
             Controls.Add(btnBack);
-            Controls.Add(CheckoutList);
+            Controls.Add(lstCart);
             Name = "CheckoutForm";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private ListBox CheckoutList;
+        private ListBox lstCart;
         private Button btnBack;
-        private Button btnAddItem;
         private Button btnCheckout;
         private Button btnRemoveItem;
+        private Label lblTotal;
     }
 }

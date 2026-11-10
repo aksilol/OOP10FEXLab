@@ -1,6 +1,6 @@
 ﻿namespace Kiosk
 {
-    partial class KioskForm1
+    partial class KioskForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KioskForm1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KioskForm));
             label1 = new Label();
             groupBox1 = new GroupBox();
             panel1 = new Panel();
@@ -87,6 +87,7 @@
             btnItem1.TabIndex = 0;
             btnItem1.Text = "-";
             btnItem1.UseVisualStyleBackColor = true;
+            btnItem1.Click += btnItem1_Click;
             // 
             // btnItem6
             // 
@@ -97,6 +98,7 @@
             btnItem6.TabIndex = 5;
             btnItem6.Text = "-";
             btnItem6.UseVisualStyleBackColor = true;
+            btnItem6.Click += btnItem6_Click;
             // 
             // btnItem2
             // 
@@ -107,6 +109,7 @@
             btnItem2.TabIndex = 1;
             btnItem2.Text = "-";
             btnItem2.UseVisualStyleBackColor = true;
+            btnItem2.Click += btnItem2_Click;
             // 
             // btnItem5
             // 
@@ -117,6 +120,7 @@
             btnItem5.TabIndex = 4;
             btnItem5.Text = "-";
             btnItem5.UseVisualStyleBackColor = true;
+            btnItem5.Click += btnItem5_Click;
             // 
             // btnItem3
             // 
@@ -127,6 +131,7 @@
             btnItem3.TabIndex = 2;
             btnItem3.Text = "-";
             btnItem3.UseVisualStyleBackColor = true;
+            btnItem3.Click += btnItem3_Click;
             // 
             // btnItem4
             // 
@@ -137,6 +142,7 @@
             btnItem4.TabIndex = 3;
             btnItem4.Text = "-";
             btnItem4.UseVisualStyleBackColor = true;
+            btnItem4.Click += btnItem4_Click;
             // 
             // btnAddCart
             // 
@@ -146,6 +152,7 @@
             btnAddCart.TabIndex = 2;
             btnAddCart.Text = "Add to Cart";
             btnAddCart.UseVisualStyleBackColor = true;
+            btnAddCart.Click += btnAddCart_Click;
             // 
             // btnCheckout
             // 
@@ -155,6 +162,7 @@
             btnCheckout.TabIndex = 3;
             btnCheckout.Text = "Checkout";
             btnCheckout.UseVisualStyleBackColor = true;
+            btnCheckout.Click += btnCheckout_Click;
             // 
             // KioskForm1
             // 
