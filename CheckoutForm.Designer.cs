@@ -64,6 +64,7 @@
             btnCheckout.TabIndex = 3;
             btnCheckout.Text = "Checkout";
             btnCheckout.UseVisualStyleBackColor = true;
+            btnCheckout.Click += btnCheckout_Click;
             // 
             // btnRemoveItem
             // 
@@ -71,8 +72,9 @@
             btnRemoveItem.Name = "btnRemoveItem";
             btnRemoveItem.Size = new Size(150, 66);
             btnRemoveItem.TabIndex = 4;
-            btnRemoveItem.Text = "Remove Item";
+            btnRemoveItem.Text = "Undo ";
             btnRemoveItem.UseVisualStyleBackColor = true;
+            btnRemoveItem.Click += btnRemoveItem_Click;
             // 
             // lblTotal
             // 

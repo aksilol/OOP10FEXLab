@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Kiosk
@@ -11,6 +7,8 @@ namespace Kiosk
     {
         public List<CartItem> Items { get; set; }
             = new List<CartItem>();
+
+        private Stack<int> additionHistory = new Stack<int>();
 
         public void AddItem(Product product)
         {
@@ -30,6 +28,30 @@ namespace Kiosk
                     Quantity = 1
                 });
             }
+
+            additionHistory.Push(product.ProductID);
+        }
+
+        public void RemoveLastItem()
+        {
+            if (additionHistory.Count == 0)
+                return;
+
+            int lastID = additionHistory.Pop();
+
+            var item = Items.FirstOrDefault(
+                x => x.Product.ProductID == lastID
+            );
+
+            if (item != null)
+            {
+                item.Quantity--;
+
+                if (item.Quantity <= 0)
+                {
+                    Items.Remove(item);
+                }
+            }
         }
 
         public decimal GetTotal()
@@ -37,11 +59,10 @@ namespace Kiosk
             return Items.Sum(x => x.Subtotal);
         }
 
-        public void RemoveItem(int productID)
+        public void Clear()
         {
-            Items.RemoveAll(
-                x => x.Product.ProductID == productID
-            );
+            Items.Clear();
+            additionHistory.Clear();
         }
     }
 }

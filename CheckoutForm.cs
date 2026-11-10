@@ -49,5 +49,60 @@ namespace Kiosk
         {
             this.Close();
         }
+
+        private void btnRemoveItem_Click(object sender, EventArgs e)
+        {
+            cart.RemoveLastItem();
+
+            DisplayCart();
+        }
+
+        private void btnCheckout_Click(object sender, EventArgs e)
+        {
+            if (cart.Items.Count == 0)
+            {
+                MessageBox.Show("Your cart is empty!");
+                return;
+            }
+
+            // Create new order
+            Order newOrder = new Order();
+
+            newOrder.OrderID = QueueStore.NextOrderNumber;
+            newOrder.OrderNumber = "A" +
+                QueueStore.NextOrderNumber.ToString("000");
+
+            newOrder.OrderDate = DateTime.Now;
+
+            newOrder.Status = OrderStatus.Preparing;
+
+            newOrder.TotalAmount = cart.GetTotal();
+
+            // Copy cart items into the order
+            foreach (var item in cart.Items)
+            {
+                newOrder.Items.Add(new OrderItem
+                {
+                    ProductName = item.Product.ProductName,
+                    Price = item.Product.Price,
+                    Quantity = item.Quantity
+                });
+            }
+
+            // Save order to shared queue
+            QueueStore.Orders.Add(newOrder);
+
+            QueueStore.NextOrderNumber++;
+
+            // Clear cart after successful submission
+            cart.Clear();
+
+            // Open Queue form
+            Queue queue = new Queue();
+            queue.Show();
+
+            // Close CheckoutForm
+            this.Close();
+        }
     }
 }
