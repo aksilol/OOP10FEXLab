@@ -37,6 +37,8 @@
             timer1 = new System.Windows.Forms.Timer(components);
             lstNowServing = new ListView();
             lstPreparing = new ListView();
+            btnSave = new Button();
+            btnBack = new Button();
             tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -101,25 +103,50 @@
             // 
             // lstNowServing
             // 
+            lstNowServing.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lstNowServing.Location = new Point(594, 142);
             lstNowServing.Name = "lstNowServing";
             lstNowServing.Size = new Size(561, 330);
             lstNowServing.TabIndex = 3;
             lstNowServing.UseCompatibleStateImageBehavior = false;
+            lstNowServing.View = View.List;
             // 
             // lstPreparing
             // 
+            lstPreparing.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lstPreparing.Location = new Point(24, 142);
             lstPreparing.Name = "lstPreparing";
             lstPreparing.Size = new Size(561, 330);
             lstPreparing.TabIndex = 4;
             lstPreparing.UseCompatibleStateImageBehavior = false;
+            lstPreparing.View = View.List;
+            // 
+            // btnSave
+            // 
+            btnSave.Location = new Point(1010, 486);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(146, 37);
+            btnSave.TabIndex = 5;
+            btnSave.Text = "Save to Text File";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
+            // 
+            // btnBack
+            // 
+            btnBack.Location = new Point(858, 486);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(146, 37);
+            btnBack.TabIndex = 6;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // Queue
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1184, 711);
+            AutoScaleMode = AutoScaleMode.None;
+            ClientSize = new Size(1179, 711);
+            Controls.Add(btnBack);
+            Controls.Add(btnSave);
             Controls.Add(lstPreparing);
             Controls.Add(lstNowServing);
             Controls.Add(tableLayoutPanel1);
@@ -127,7 +154,6 @@
             Name = "Queue";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Queue";
-            WindowState = FormWindowState.Maximized;
             tableLayoutPanel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -145,7 +171,9 @@
         private Label label1;
         private System.Windows.Forms.Timer timer1;
         private ListView listView1;
-        private ListView lstNowServing;
         private ListView lstPreparing;
+        private Button btnSave;
+        private Button btnBack;
+        public ListView lstNowServing;
     }
 }
