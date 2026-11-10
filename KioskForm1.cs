@@ -1,8 +1,8 @@
 namespace Kiosk
 {
-    public partial class Form1 : Form
+    public partial class KioskForm1 : Form
     {
-        public Form1()
+        public KioskForm1()
         {
             InitializeComponent();
         }

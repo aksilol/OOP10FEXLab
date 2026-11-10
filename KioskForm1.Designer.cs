@@ -1,6 +1,6 @@
 ﻿namespace Kiosk
 {
-    partial class Form1
+    partial class KioskForm1
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KioskForm1));
             label1 = new Label();
             groupBox1 = new GroupBox();
             panel1 = new Panel();
@@ -46,11 +47,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(239, 19);
+            label1.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(206, 9);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(247, 50);
             label1.TabIndex = 0;
-            label1.Text = "label1";
+            label1.Text = "ORDER HERE";
             // 
             // groupBox1
             // 
@@ -78,6 +80,7 @@
             // 
             // btnItem1
             // 
+            btnItem1.Image = (Image)resources.GetObject("btnItem1.Image");
             btnItem1.Location = new Point(27, 9);
             btnItem1.Name = "btnItem1";
             btnItem1.Size = new Size(237, 175);
@@ -87,6 +90,7 @@
             // 
             // btnItem6
             // 
+            btnItem6.Image = (Image)resources.GetObject("btnItem6.Image");
             btnItem6.Location = new Point(350, 400);
             btnItem6.Name = "btnItem6";
             btnItem6.Size = new Size(237, 175);
@@ -96,6 +100,7 @@
             // 
             // btnItem2
             // 
+            btnItem2.Image = (Image)resources.GetObject("btnItem2.Image");
             btnItem2.Location = new Point(350, 9);
             btnItem2.Name = "btnItem2";
             btnItem2.Size = new Size(237, 175);
@@ -105,6 +110,7 @@
             // 
             // btnItem5
             // 
+            btnItem5.Image = (Image)resources.GetObject("btnItem5.Image");
             btnItem5.Location = new Point(27, 400);
             btnItem5.Name = "btnItem5";
             btnItem5.Size = new Size(237, 175);
@@ -114,6 +120,7 @@
             // 
             // btnItem3
             // 
+            btnItem3.Image = (Image)resources.GetObject("btnItem3.Image");
             btnItem3.Location = new Point(27, 204);
             btnItem3.Name = "btnItem3";
             btnItem3.Size = new Size(237, 175);
@@ -123,6 +130,7 @@
             // 
             // btnItem4
             // 
+            btnItem4.Image = (Image)resources.GetObject("btnItem4.Image");
             btnItem4.Location = new Point(350, 204);
             btnItem4.Name = "btnItem4";
             btnItem4.Size = new Size(237, 175);
@@ -148,7 +156,7 @@
             btnCheckout.Text = "Checkout";
             btnCheckout.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // KioskForm1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -157,9 +165,9 @@
             Controls.Add(btnAddCart);
             Controls.Add(groupBox1);
             Controls.Add(label1);
-            Name = "Form1";
+            Name = "KioskForm1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "McLiving";
             Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             panel1.ResumeLayout(false);
